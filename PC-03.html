@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio Interactivo</title>
+  <link rel="icon" href="img/logo.svg">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="PC-03.css">
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#navPrincipal" data-bs-offset="80" tabindex="0">
+
+  <div class="pantalla-carga" id="pantallaCarga">
+    <div class="loader"></div>
+    <p class="titulo fs-5 m-0">Calentando la plancha</p>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark navbar-burger fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 titulo" href="#inicio">
+        <img src="img/logo.svg" alt="Logo Doble Click Burger">
+        Doble Click <span class="text-naranja">Burger</span>
+      </a>
+
+      <button class="menu-toggle d-lg-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navPrincipal" aria-controls="navPrincipal"
+              aria-expanded="false" aria-label="Abrir menú">
+        <span class="hamburger"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navPrincipal">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#menu">Menú</a></li>
+          <li class="nav-item"><a class="nav-link" href="#promo">Promo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+          <li class="nav-item"><a class="btn btn-naranja btn-ripple rounded-pill px-4 ms-lg-2 mt-2 mt-lg-0" href="#pedido">Pedir ya</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero d-flex align-items-center" id="inicio">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 entrada-izq">
+          <span class="badge rounded-pill mb-3 px-3 py-2"><i class="bi bi-fire"></i> Hechas a la parrilla</span>
+          <h1 class="display-3 titulo mb-3">Un click y tu <span class="text-naranja">burger</span> llega volando</h1>
+          <p class="lead opacity-75 mb-4">
+            Pan brioche, carne jugosa y salsas de la casa. Hamburguesas armadas al momento para que las disfrutes calientitas.
+          </p>
+          <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
+            <a href="#menu" class="btn btn-naranja btn-lg btn-ripple rounded-pill px-4"><i class="bi bi-list-ul me-1"></i> Ver menú</a>
+            <a href="#pedido" class="btn btn-outline-light btn-lg btn-ripple rounded-pill px-4"><i class="bi bi-bag me-1"></i> Hacer pedido</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6 text-center position-relative">
+          <img src="img/hero-burger.svg" class="burger-flotante" alt="Hamburguesa doble">
+          <div class="sello-precio">
+            <small>desde</small>
+            <span class="fs-4">S/ 15</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="cinta">
+    <div class="cinta-texto">
+      🍔 CARNE 100% DE RES &nbsp;•&nbsp; 🧀 QUESO DERRETIDO &nbsp;•&nbsp; 🍟 PAPAS CROCANTES &nbsp;•&nbsp; 🚀 DELIVERY RÁPIDO &nbsp;•&nbsp; 🌶️ SALSAS DE LA CASA &nbsp;•&nbsp;
+      🍔 CARNE 100% DE RES &nbsp;•&nbsp; 🧀 QUESO DERRETIDO &nbsp;•&nbsp; 🍟 PAPAS CROCANTES &nbsp;•&nbsp; 🚀 DELIVERY RÁPIDO &nbsp;•&nbsp; 🌶️ SALSAS DE LA CASA &nbsp;•&nbsp;
+    </div>
+  </div>
+
+  <section class="py-5 mt-4" id="menu">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="titulo display-6">Nuestro <span class="text-naranja">menú</span></h2>
+        <p class="text-secondary">Pasa el mouse (o toca la tarjeta) para ver los ingredientes</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="tarjeta-3d">
+            <div class="tarjeta-interior">
+              <div class="cara-tarjeta cara-frente">
+                <img src="img/burger-clasica.png" alt="Hamburguesa clásica">
+                <div class="p-3">
+                  <h5 class="titulo mb-1">La Clásica</h5>
+                  <span class="precio">S/ 15</span>
+                </div>
+              </div>
+              <div class="cara-tarjeta cara-atras">
+                <h5 class="titulo">La Clásica</h5>
+                <ul class="mb-3">
+                  <li>Carne de res 150 g</li>
+                  <li>Queso cheddar</li>
+                  <li>Lechuga y tomate</li>
+                  <li>Salsa de la casa</li>
+                </ul>
+                <a href="#pedido" class="btn btn-mostaza btn-ripple rounded-pill">¡La quiero!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="tarjeta-3d">
+            <div class="tarjeta-interior">
+              <div class="cara-tarjeta cara-frente">
+                <img src="img/burger-doble.png" alt="Hamburguesa doble">
+                <div class="p-3">
+                  <h5 class="titulo mb-1">Doble Click</h5>
+                  <span class="precio">S/ 22</span>
+                </div>
+              </div>
+              <div class="cara-tarjeta cara-atras">
+                <h5 class="titulo">Doble Click</h5>
+                <ul class="mb-3">
+                  <li>Doble carne de res</li>
+                  <li>Doble queso cheddar</li>
+                  <li>Tocino crocante</li>
+                  <li>Pepinillos</li>
+                </ul>
+                <a href="#pedido" class="btn btn-mostaza btn-ripple rounded-pill">¡La quiero!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="tarjeta-3d">
+            <div class="tarjeta-interior">
+              <div class="cara-tarjeta cara-frente">
+                <img src="img/burger-bbq.png" alt="Hamburguesa BBQ">
+                <div class="p-3">
+                  <h5 class="titulo mb-1">BBQ Ahumada</h5>
+                  <span class="precio">S/ 20</span>
+                </div>
+              </div>
+              <div class="cara-tarjeta cara-atras">
+                <h5 class="titulo">BBQ Ahumada</h5>
+                <ul class="mb-3">
+                  <li>Carne a la parrilla</li>
+                  <li>Salsa barbacoa</li>
+                  <li>Cebolla caramelizada</li>
+                  <li>Queso ahumado</li>
+                </ul>
+                <a href="#pedido" class="btn btn-mostaza btn-ripple rounded-pill">¡La quiero!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="tarjeta-3d">
+            <div class="tarjeta-interior">
+              <div class="cara-tarjeta cara-frente">
+                <img src="img/burger-pollo.svg" alt="Hamburguesa de pollo">
+                <div class="p-3">
+                  <h5 class="titulo mb-1">Pollo Crispy</h5>
+                  <span class="precio">S/ 18</span>
+                </div>
+              </div>
+              <div class="cara-tarjeta cara-atras">
+                <h5 class="titulo">Pollo Crispy</h5>
+                <ul class="mb-3">
+                  <li>Pechuga empanizada</li>
+                  <li>Lechuga y tomate</li>
+                  <li>Mayonesa de ajo</li>
+                </ul>
+                <a href="#pedido" class="btn btn-mostaza btn-ripple rounded-pill">¡La quiero!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="tarjeta-3d">
+            <div class="tarjeta-interior">
+              <div class="cara-tarjeta cara-frente">
+                <img src="img/burger-veggie.svg" alt="Hamburguesa vegetariana">
+                <div class="p-3">
+                  <h5 class="titulo mb-1">Veggie Power</h5>
+                  <span class="precio">S/ 17</span>
+                </div>
+              </div>
+              <div class="cara-tarjeta cara-atras">
+                <h5 class="titulo">Veggie Power</h5>
+                <ul class="mb-3">
+                  <li>Medallón de quinua</li>
+                  <li>Palta</li>
+                  <li>Tomate y lechuga</li>
+                  <li>Salsa de yogurt</li>
+                </ul>
+                <a href="#pedido" class="btn btn-mostaza btn-ripple rounded-pill">¡La quiero!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-lg-4">
+          <div class="tarjeta-3d">
+            <div class="tarjeta-interior">
+              <div class="cara-tarjeta cara-frente">
+                <img src="img/burger-picante.svg" alt="Hamburguesa picante">
+                <div class="p-3">
+                  <h5 class="titulo mb-1">La Picante</h5>
+                  <span class="precio">S/ 19</span>
+                </div>
+              </div>
+              <div class="cara-tarjeta cara-atras">
+                <h5 class="titulo">La Picante 🌶️</h5>
+                <ul class="mb-3">
+                  <li>Carne de res</li>
+                  <li>Ají amarillo y rocoto</li>
+                  <li>Queso pepper jack</li>
+                  <li>Jalapeños</li>
+                </ul>
+                <a href="#pedido" class="btn btn-mostaza btn-ripple rounded-pill">¡La quiero!</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5 bg-white">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="titulo display-6">¿Por qué <span class="text-naranja">elegirnos</span>?</h2>
+        <p class="text-secondary">Pasa el mouse por los rombos 👀</p>
+      </div>
+
+      <div class="row g-4 text-center">
+        <div class="col-6 col-md-3">
+          <div class="rombo rombo-1">🔥</div>
+          <h6 class="mt-3 fw-bold">A la parrilla</h6>
+          <small class="text-secondary">Rotación</small>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="rombo rombo-2">🧀</div>
+          <h6 class="mt-3 fw-bold">Mucho queso</h6>
+          <small class="text-secondary">Traslación</small>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="rombo rombo-3">🥬</div>
+          <h6 class="mt-3 fw-bold">Todo fresco</h6>
+          <small class="text-secondary">Escalado</small>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="rombo rombo-4">🛵</div>
+          <h6 class="mt-3 fw-bold">Delivery rápido</h6>
+          <small class="text-secondary">Sesgado</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="promo py-5" id="promo">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 order-2 order-lg-1 text-center text-lg-start">
+          <span class="badge text-bg-warning mb-3">Solo por hoy</span>
+          <h2 class="titulo display-5">Combo <span class="text-naranja">Diamante</span></h2>
+          <p class="opacity-75">Hamburguesa doble + papas + bebida a un precio que brilla más que el diamante 💎</p>
+          <p class="fs-2 fw-bold mb-4">
+            <span class="text-decoration-line-through opacity-50 fs-5 me-2">S/ 35</span>
+            <span class="text-naranja">S/ 25</span>
+          </p>
+
+          <div class="reloj d-flex gap-2 justify-content-center justify-content-lg-start mb-4 text-center">
+            <div><span id="horas">00</span><small>horas</small></div>
+            <div><span id="minutos">00</span><small>min</small></div>
+            <div><span id="segundos">00</span><small>seg</small></div>
+          </div>
+
+          <a href="#pedido" class="btn btn-mostaza btn-lg btn-ripple rounded-pill px-5">Quiero mi combo</a>
+        </div>
+
+        <div class="col-lg-6 order-1 order-lg-2">
+          <div class="escena-3d">
+            <div class="diamante">
+              <div class="cara arriba c1">🍔</div>
+              <div class="cara arriba c2">🍟</div>
+              <div class="cara arriba c3">🥤</div>
+              <div class="cara arriba c4">🧀</div>
+              <div class="cara abajo c1">🔥</div>
+              <div class="cara abajo c2">⭐</div>
+              <div class="cara abajo c3">🌶️</div>
+              <div class="cara abajo c4">🥬</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="galeria py-5" id="galeria">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="titulo display-6">Para <span class="text-naranja">acompañar</span></h2>
+        <p class="text-secondary">Porque una burger nunca va sola</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-6 col-lg-5">
+          <img src="img/papas.png" alt="Papas fritas">
+          <h5 class="titulo mt-3">Papas crocantes · S/ 6</h5>
+          <p class="text-secondary">Cortadas a mano y fritas al momento, con sal de maras.</p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-5">
+          <img src="img/bebida.png" alt="Bebida">
+          <h5 class="titulo mt-3">Bebida helada · S/ 5</h5>
+          <p class="text-secondary">Chicha morada, limonada frotada o gaseosa bien heladita.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5" id="pedido">
+    <div class="container">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5 text-center text-lg-start">
+          <h2 class="titulo display-6">Haz tu <span class="text-naranja">pedido</span></h2>
+          <p class="text-secondary mb-4">Llena el formulario y en minutos estará en camino.</p>
+
+          <div class="row g-3">
+            <div class="col-4 beneficio text-center"><i class="bi bi-clock-history"></i><p class="small mt-2">30 min</p></div>
+            <div class="col-4 beneficio text-center"><i class="bi bi-cash-coin"></i><p class="small mt-2">Pago fácil</p></div>
+            <div class="col-4 beneficio text-center"><i class="bi bi-emoji-smile"></i><p class="small mt-2">Rico siempre</p></div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <form class="panel-pedido p-4 p-md-5 needs-validation" id="formPedido" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="nombre" placeholder="Nombre" required>
+                  <label for="nombre"><i class="bi bi-person"></i> Nombre</label>
+                  <div class="invalid-feedback">¿Cómo te llamas? 🙂</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input type="tel" class="form-control" id="celular" placeholder="Celular" pattern="9[0-9]{8}" required>
+                  <label for="celular"><i class="bi bi-phone"></i> Celular</label>
+                  <div class="invalid-feedback">Debe tener 9 dígitos y empezar con 9.</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-floating">
+                  <select class="form-select" id="burger" required>
+                    <option value="">Elige...</option>
+                    <option>La Clásica</option>
+                    <option>Doble Click</option>
+                    <option>BBQ Ahumada</option>
+                    <option>Pollo Crispy</option>
+                    <option>Veggie Power</option>
+                    <option>La Picante</option>
+                    <option>Combo Diamante</option>
+                  </select>
+                  <label for="burger"><i class="bi bi-egg-fried"></i> Tu hamburguesa</label>
+                  <div class="invalid-feedback">Elige tu burger favorita.</div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <p class="mb-2 fw-semibold">Tamaño</p>
+                <div class="row g-2 text-center">
+                  <div class="col-4">
+                    <input type="radio" class="btn-check" name="tamano" id="t1" checked>
+                    <label class="opcion d-block p-2" for="t1">🍔<br><small>Normal</small></label>
+                  </div>
+                  <div class="col-4">
+                    <input type="radio" class="btn-check" name="tamano" id="t2">
+                    <label class="opcion d-block p-2" for="t2">🍔🍔<br><small>Grande</small></label>
+                  </div>
+                  <div class="col-4">
+                    <input type="radio" class="btn-check" name="tamano" id="t3">
+                    <label class="opcion d-block p-2" for="t3">🍔🍔🍔<br><small>Monstruo</small></label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+                  <input type="text" class="form-control" id="direccion" placeholder="Dirección de entrega" required>
+                  <div class="invalid-feedback">Necesitamos saber a dónde llevarlo 🛵</div>
+                </div>
+              </div>
+
+              <div class="col-12 d-flex flex-wrap gap-4">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="extraPapas">
+                  <label class="form-check-label" for="extraPapas">Agregar papas 🍟</label>
+                </div>
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" id="extraQueso">
+                  <label class="form-check-label" for="extraQueso">Queso extra 🧀</label>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <button class="btn btn-naranja btn-lg btn-ripple w-100 rounded-pill" type="submit" id="btnPedido">
+                  <span class="texto"><i class="bi bi-send me-1"></i> Enviar pedido</span>
+                  <span class="cargando d-none"><span class="spinner-border spinner-border-sm me-2"></span>Enviando...</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-carbon text-white py-4">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <p class="m-0 titulo">Doble Click <span class="text-naranja">Burger</span> · PC-03</p>
+      <div class="d-flex gap-3">
+        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+        <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+      </div>
+      <small class="opacity-75">Portafolio Interactivo · CSS Avanzado</small>
+    </div>
+  </footer>
+
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div id="toast" class="toast border-0" role="alert">
+      <div class="toast-header">
+        <img src="img/logo.svg" width="22" class="me-2" alt="">
+        <strong class="me-auto">Doble Click Burger</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="toast"></button>
+      </div>
+      <div class="toast-body" id="toastTexto"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => document.getElementById('pantallaCarga').classList.add('oculto'), 1500);
+    });
+
+    const navPrincipal = document.getElementById('navPrincipal');
+    navPrincipal.querySelectorAll('a').forEach(enlace => {
+      enlace.addEventListener('click', () => {
+        if (navPrincipal.classList.contains('show')) {
+          bootstrap.Collapse.getOrCreateInstance(navPrincipal).hide();
+        }
+      });
+    });
+
+    document.querySelectorAll('.btn-ripple').forEach(boton => {
+      boton.addEventListener('click', function (e) {
+        const rect = this.getBoundingClientRect();
+        const onda = document.createElement('span');
+        onda.className = 'ripple';
+        onda.style.left = (e.clientX - rect.left - 50) + 'px';
+        onda.style.top = (e.clientY - rect.top - 50) + 'px';
+        this.appendChild(onda);
+        onda.addEventListener('animationend', () => onda.remove());
+      });
+    });
+
+    document.querySelectorAll('.tarjeta-3d').forEach(tarjeta => {
+      tarjeta.addEventListener('click', e => {
+        if (!e.target.closest('a')) tarjeta.classList.toggle('volteada');
+      });
+    });
+
+    function actualizarReloj() {
+      const ahora = new Date();
+      const fin = new Date(); fin.setHours(24, 0, 0, 0);
+      const resto = Math.floor((fin - ahora) / 1000);
+      const dos = n => String(n).padStart(2, '0');
+      document.getElementById('horas').textContent = dos(Math.floor(resto / 3600));
+      document.getElementById('minutos').textContent = dos(Math.floor(resto % 3600 / 60));
+      document.getElementById('segundos').textContent = dos(resto % 60);
+    }
+    actualizarReloj();
+    setInterval(actualizarReloj, 1000);
+
+    function mostrarToast(texto) {
+      document.getElementById('toastTexto').textContent = texto;
+      bootstrap.Toast.getOrCreateInstance(document.getElementById('toast')).show();
+    }
+
+    const form = document.getElementById('formPedido');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.classList.add('was-validated');
+        mostrarToast('Ups, te faltan algunos datos ✋');
+        return;
+      }
+      const btn = document.getElementById('btnPedido');
+      btn.disabled = true;
+      btn.querySelector('.texto').classList.add('d-none');
+      btn.querySelector('.cargando').classList.remove('d-none');
+
+      setTimeout(() => {
+        const nombre = document.getElementById('nombre').value;
+        mostrarToast(`¡Gracias, ${nombre}! Tu pedido ya está en la plancha 🍔🔥`);
+        form.reset();
+        form.classList.remove('was-validated');
+        btn.disabled = false;
+        btn.querySelector('.texto').classList.remove('d-none');
+        btn.querySelector('.cargando').classList.add('d-none');
+      }, 1800);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,559 @@
+/* profe Hernán Peña! Aquí le dejo mi hoja de estilos.
+Traté de dejar todo ordenado por secciones. ¡Espero le guste!*/
+
+/* 1. Variables de color  
+Profe, aquí guardé mi paleta para no repetir colores por todo lado */
+:root {
+  --naranja: #ff7a00;
+  --naranja-oscuro: #e06500;
+  --mostaza: #ffc928;
+  --ketchup: #e53935;
+  --pan: #e8a23d;
+  --carbon: #1f1a17;
+  --crema: #fff7ec;
+}
+
+/* 2. Base general */
+html,
+body {
+  overflow-x: clip; 
+}
+
+body {
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  background-color: var(--crema);
+  color: var(--carbon);
+}
+
+.titulo {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 800;
+}
+
+.text-naranja { color: var(--naranja) !important; }
+.bg-carbon { background-color: var(--carbon) !important; }
+
+section { scroll-margin-top: 70px; } 
+
+/*  3. MI PANTALLA DE CARGA (animación spin) 
+Profe, aquí aplicando algunos estilos ya trabajados en clase */
+.pantalla-carga {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: var(--carbon);
+  color: white;
+  transition: opacity .6s, visibility .6s;
+}
+
+.pantalla-carga.oculto {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader {
+  width: 90px;
+  height: 90px;
+  border: 14px solid #3a322c;
+  border-top: 14px solid var(--mostaza); 
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 4. NAVBAR de Bootstrap personalizado */
+.navbar-burger {
+  background: rgba(31, 26, 23, .92);
+  backdrop-filter: blur(8px);
+}
+
+.navbar-burger .navbar-brand img {
+  width: 42px;
+  transition: transform .5s;
+}
+
+/* 5. Profe Hernan, el logo da una vuelta completa al pasarle el mouse */
+.navbar-burger .navbar-brand:hover img {
+  transform: rotate(360deg);
+}
+
+.navbar-burger .nav-link {
+  color: #f1e6da;
+  position: relative;
+}
+
+/* Una Rayita mostaza que crece debajo del link */
+.navbar-burger .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 15%;
+  right: 15%;
+  bottom: 4px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--mostaza);
+  transform: scaleX(0);
+  transition: transform .3s;
+}
+
+.navbar-burger .nav-link:hover::after,
+.navbar-burger .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.navbar-burger .nav-link:hover { color: var(--mostaza); }
+
+/* Profe, cambié el ícono de Bootstrap por mis 3 líneas que se vuelven X */
+.menu-toggle {
+  background: none;
+  border: none;
+  padding: 14px 4px;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all .3s ease-in-out;
+}
+
+.hamburger { position: relative; }
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before { top: -9px; }
+.hamburger::after  { top: 9px; }
+
+
+.menu-toggle[aria-expanded="true"] .hamburger { background-color: transparent; }
+.menu-toggle[aria-expanded="true"] .hamburger::before { top: 0; transform: rotate(45deg); }
+.menu-toggle[aria-expanded="true"] .hamburger::after  { top: 0; transform: rotate(-45deg); }
+
+@media (max-width: 991.98px) {
+  .navbar-collapse.show .nav-item {
+    animation: slideIn .4s ease-out both;
+  }
+  .navbar-collapse.show .nav-item:nth-child(2) { animation-delay: .05s; }
+  .navbar-collapse.show .nav-item:nth-child(3) { animation-delay: .1s; }
+  .navbar-collapse.show .nav-item:nth-child(4) { animation-delay: .15s; }
+  .navbar-collapse.show .nav-item:nth-child(5) { animation-delay: .2s; }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Mi portada, profesor Hernan */
+.hero {
+  min-height: 100vh;
+  padding-top: 90px;
+  background:
+    radial-gradient(circle at 80% 30%, rgba(255, 201, 40, .35), transparent 45%),
+    linear-gradient(160deg, var(--carbon) 55%, #3a2216 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero .badge { background-color: var(--ketchup); }
+
+/* Texto que entra desde la izquierda */
+.entrada-izq { animation: entrarIzq .9s ease-out both; }
+
+@keyframes entrarIzq {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* La hamburguesa grande flota y gira un poquito */
+.burger-flotante {
+  max-width: 480px;
+  width: 100%;
+  filter: drop-shadow(0 30px 25px rgba(0, 0, 0, .45));
+  animation: flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%      { transform: translateY(-22px) rotate(3deg); }
+}
+
+/* Circulito de precio que late */
+.sello-precio {
+  position: absolute;
+  top: 8%;
+  right: 8%;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: var(--mostaza);
+  color: var(--carbon);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  transform: rotate(12deg);
+  animation: latir 1.6s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .3);
+}
+
+@keyframes latir {
+  0%, 100% { transform: rotate(12deg) scale(1); }
+  50%      { transform: rotate(12deg) scale(1.1); }
+}
+
+/* 6. BOTONES con efecto de onda  */
+.btn-ripple {
+  position: relative;
+  overflow: hidden; /* Para que la onda no se salga del botón */
+}
+
+.btn-naranja {
+  --bs-btn-bg: var(--naranja);
+  --bs-btn-border-color: var(--naranja);
+  --bs-btn-color: #fff;
+  --bs-btn-hover-bg: var(--naranja-oscuro);
+  --bs-btn-hover-border-color: var(--naranja-oscuro);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-font-weight: 700;
+}
+
+.btn-mostaza {
+  --bs-btn-bg: var(--mostaza);
+  --bs-btn-border-color: var(--mostaza);
+  --bs-btn-color: var(--carbon);
+  --bs-btn-hover-bg: #f0b800;
+  --bs-btn-hover-color: var(--carbon);
+  --bs-btn-font-weight: 700;
+}
+
+.ripple {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .6);
+  transform: scale(0);
+  animation: ripple-effect .6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Algunas otras animaciones profe hernan */
+.cinta {
+  background: var(--mostaza);
+  overflow: hidden;
+  white-space: nowrap;
+  transform: rotate(-2deg) scale(1.05); /* Profe, la incliné para que se vea más chévere */
+  margin-top: -20px;
+  position: relative;
+  z-index: 2;
+}
+
+.cinta-texto {
+  display: inline-block;
+  padding: 12px 0;
+  font-weight: 800;
+  font-size: 1.2rem;
+  animation: desplazar 18s linear infinite;
+}
+
+@keyframes desplazar {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Algunos efectos 3D que enseño en clase */
+.tarjeta-3d {
+  perspective: 1000px;
+  height: 360px;
+}
+
+.tarjeta-interior {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .8s cubic-bezier(.4, .2, .2, 1);
+}
+
+/* Al pasar el mouse o tocar en el celular la tarjeta gira 180° */
+.tarjeta-3d:hover .tarjeta-interior,
+.tarjeta-3d.volteada .tarjeta-interior {
+  transform: rotateY(180deg);
+}
+
+.cara-tarjeta {
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  backface-visibility: hidden; 
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .12);
+}
+
+.cara-frente { background: white; }
+
+.cara-frente img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.cara-atras {
+  background: linear-gradient(145deg, var(--naranja), var(--ketchup));
+  color: white;
+  transform: rotateY(180deg); /* Esta cara ya empieza volteada */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.precio {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--naranja);
+}
+
+
+.rombo {
+  width: 130px;
+  height: 130px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.6rem;
+  cursor: pointer;
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%); /* Recorte en forma de rombo */
+  transition: transform .5s;
+}
+
+.rombo-1 { background: var(--ketchup); }
+.rombo-2 { background: var(--mostaza); }
+.rombo-3 { background: #66bb6a; }
+.rombo-4 { background: var(--naranja); }
+
+.rombo-1:hover { transform: rotate(45deg); }       /* Rotación */
+.rombo-2:hover { transform: translateY(-25px); }   /* Traslación */
+.rombo-3:hover { transform: scale(1.35); }         /* Escalado */
+.rombo-4:hover { transform: skew(12deg, 12deg); }  /* Sesgado */
+
+
+.promo {
+  background: var(--carbon);
+  color: white;
+}
+
+.escena-3d {
+  perspective: 900px;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diamante {
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  animation: rotar 7s linear infinite;
+}
+
+.escena-3d:hover .diamante { animation-play-state: paused; }
+
+.cara {
+  position: absolute;
+  width: 140px;
+  height: 121.24px; 
+  left: -70px;
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.cara.arriba {
+  top: -121.24px;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  transform-origin: 50% 100%;
+  align-items: flex-end;
+  padding-bottom: 14px;
+}
+
+.cara.abajo {
+  top: 0;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+  transform-origin: 50% 0%;
+  align-items: flex-start;
+  padding-top: 14px;
+}
+
+.c1 { background: rgba(255, 122, 0, .9); }
+.c2 { background: rgba(255, 201, 40, .9); }
+.c3 { background: rgba(229, 57, 53, .9); }
+.c4 { background: rgba(102, 187, 106, .9); }
+
+/* rotateY elige el lado, translateZ lo saca al borde y rotateX lo inclina */
+.arriba.c1 { transform: rotateY(0deg)   translateZ(70px) rotateX(35.26deg); }
+.arriba.c2 { transform: rotateY(90deg)  translateZ(70px) rotateX(35.26deg); }
+.arriba.c3 { transform: rotateY(180deg) translateZ(70px) rotateX(35.26deg); }
+.arriba.c4 { transform: rotateY(-90deg) translateZ(70px) rotateX(35.26deg); }
+.abajo.c1  { transform: rotateY(0deg)   translateZ(70px) rotateX(-35.26deg); }
+.abajo.c2  { transform: rotateY(90deg)  translateZ(70px) rotateX(-35.26deg); }
+.abajo.c3  { transform: rotateY(180deg) translateZ(70px) rotateX(-35.26deg); }
+.abajo.c4  { transform: rotateY(-90deg) translateZ(70px) rotateX(-35.26deg); }
+
+@keyframes rotar {
+  from { transform: rotateX(-20deg) rotateY(0deg); }
+  to   { transform: rotateX(-20deg) rotateY(360deg); }
+}
+
+/* Cuenta regresiva de la promo */
+.reloj div {
+  background: rgba(255, 255, 255, .08);
+  border-radius: 12px;
+  padding: 10px 16px;
+  min-width: 72px;
+}
+
+.reloj span {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--mostaza);
+}
+
+/* Enfocado en mi galeria */
+.galeria img {
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, .12);
+}
+
+@keyframes show {
+  from { opacity: 0; scale: 25%; }
+  to   { opacity: 1; scale: 100%; }
+}
+
+/* Solo se aplica en navegadores que lo soportan (Chrome y Edge) */
+@supports (animation-timeline: view()) {
+  .galeria img {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: show;
+    animation-range: entry 25% cover 30%;
+    animation-fill-mode: both;
+  }
+}
+
+/* Colocando algunos formularios */
+.panel-pedido {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--naranja);
+  box-shadow: 0 0 0 .25rem rgba(255, 122, 0, .2);
+}
+
+.form-check-input:checked {
+  background-color: var(--naranja);
+  border-color: var(--naranja);
+}
+
+.opcion {
+  border: 2px solid #eee;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: transform .25s, border-color .25s;
+}
+
+.btn-check:checked + .opcion {
+  border-color: var(--naranja);
+  transform: translateY(-6px);
+  background: #fff3e6;
+}
+
+/* Iconos de beneficios que saltan */
+.beneficio i {
+  font-size: 2.4rem;
+  color: var(--naranja);
+  display: inline-block;
+  transition: transform .4s;
+}
+
+.beneficio:hover i { transform: translateY(-8px) rotate(-10deg) scale(1.2); }
+
+footer a {
+  color: #f1e6da;
+  font-size: 1.5rem;
+  display: inline-block;
+  transition: transform .3s, color .3s;
+}
+
+footer a:hover {
+  color: var(--mostaza);
+  transform: translateY(-5px) rotate(8deg);
+}
+
+/* Profesor Hernan para que sea responsivo */
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  .hero { text-align: center; }
+  .sello-precio { width: 90px; height: 90px; font-size: .9rem; }
+  .burger-flotante { max-width: 360px; }
+}
+
+/* Celular */
+@media (max-width: 575.98px) {
+  .hero .display-3 { font-size: 2.3rem; }
+  .tarjeta-3d { height: 340px; }
+  .rombo { width: 100px; height: 100px; font-size: 2rem; }
+  .escena-3d { height: 280px; transform: scale(.85); }
+  .reloj div { min-width: 60px; padding: 8px 10px; }
+  .reloj span { font-size: 1.4rem; }
+  .cinta-texto { font-size: 1rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
